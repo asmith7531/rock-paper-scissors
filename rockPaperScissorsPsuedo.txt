@@ -1,0 +1,12 @@
+Rock Paper Scissors Psuedocode
+
+Define variables rock paper and scissors.
+
+Define variable computer choice. Make it a random number generator with limits 1-2. use floor to round the number down. That will give us 3 integers (0,1,2)
+
+write the controls to the page 1=rock 2=paper 3=scissors
+
+prompt the user for a choice 1-3 
+
+if the choice is not 1-3 post a default message saying "stick to the minimum viable product to beat the computer
+
