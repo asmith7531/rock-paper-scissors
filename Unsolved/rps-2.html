@@ -3,15 +3,18 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Rock Paper Scissors Part 2
+  <title>Rock Paper Scissors 
+ 
   </title>
+  <link rel="stylesheet" type="text/css" href="style.css" >
 </head>
 
 <body>
-
+ 
   <div id="title">
     <h1>Rock Paper Scissors</h1>
   </div>
+  <img src="../Images/9-RPS-example.png" alt="rock paper scissors">
   <p>Press "r" for rock, "p" for paper, or "s" for scissors!
   </p>
   <h2>
@@ -32,9 +35,11 @@
 
     // Creates an array that lists out all of the options (Rock, Paper, or Scissors).
     var computerChoices = ["r", "p", "s"];
-    let wins=document.getElementById("wins");
-    let loses=document.getElementById("loses");
-    let ties=document.getElementById("ties");
+
+
+    let wins=0;
+    let loses=0;
+    let ties=0;
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
     
@@ -46,9 +51,9 @@
 
       // Alerts the key the user pressed (userGuess).
       alert("User guess: " + userGuess);
-      alert("The computer guessed:" +computerGuess);
+      alert("The computer guessed: " + computerGuess);
       
-
+      //Game logic conditions
       if ((userGuess=="r") || (userGuess=="p") || (userGuess=="s")) {
           if (userGuess==computerGuess) {
           alert("You and the computer both chose "+userGuess);
@@ -57,27 +62,34 @@
           else {
             if ((userGuess=="r")&&(computerGuess=="s")) {
               wins++;
+              alert("You won!");
             }
             else if ((userGuess=="p")&&(computerGuess=="r")) {
               wins++;
+              alert("You won!");
             }
             else if ((userGuess=="s")&&(computerGuess=="p")) {
               wins++;
+              alert("You won!");
             }
             else if ((userGuess=="r")&&(computerGuess=="p")) {
+              alert("You lost!");
               loses++;
             }
             else if ((userGuess=="s")&&(computerGuess=="r")) {
               loses++;
+              alert("You lost!");
             }
             else if ((userGuess=="p")&&(computerGuess=="s")) {
               loses++;
+              alert("You lost!");
             }
-          }
+          } 
       }
-      else {
-        alert("Hey, lets keep this to the minimum viable product, buddy. ")
-      }
+      // Writes the score to the relative html span
+      document.getElementById('wins').innerHTML=wins;
+      document.getElementById('loses').innerHTML=loses;
+      document.getElementById('ties').innerHTML=ties;
     };
   </script>
 

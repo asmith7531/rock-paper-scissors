@@ -1,0 +1,6 @@
+body {
+    grid-template-columns: 10% 20% 20% 20% 20% 10%;
+    grid-template-rows: 5% 10% 20% 20% 20% auto;
+    background: lightblue;
+    color: grey;
+}
